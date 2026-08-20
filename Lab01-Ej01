@@ -1,0 +1,19 @@
+Algoritmo Cafe
+	// Definicion de variables 
+	Definir taza,cafePreparado,azucar Como Cadena
+	//ENTRADA 
+	Escribir "Ingrese el tipo/estado de la taza"
+	Leer taza
+	
+	Escribir "Ingrese el estado del cafe"
+	Leer cafePreparado
+	
+	Escribir "Ingrese las cantidad de azucar"
+	Leer azucar
+	//PROCESO 
+	Escribir "Paso 1: Colocar la" taza, "en la superficie de trabajo"
+	Escribir "Paso 2: Colocar" azucar, "cucharadas a la"  , taza "."
+	Escribir "Paso 3; Agregar el" cafePreparado , "a la" ,taza "."
+	//Salida 
+	Escribir "SALIDA" , salida
+FinAlgoritmo
