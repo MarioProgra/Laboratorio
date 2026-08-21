@@ -1,0 +1,11 @@
+Algoritmo sin_titulo
+	Definir Precio,Cantidad Como Real
+	//Entrada
+	Escribir "Ingrese el precio del producto"
+	Leer Precio
+	Escribir "Ingrese la cantidad del producto"
+	Leer Cantidad
+	//Proceso
+	Escribir "Precio Total=" Precio*Cantidad
+	Escribir "Descuento Aplicado=" (Precio*Cantidad*0.90)
+FinAlgoritmo
