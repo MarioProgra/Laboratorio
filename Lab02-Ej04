@@ -1,0 +1,12 @@
+Algoritmo sin_titulo
+	Definir Base, Altura Como Real
+	//entrada 
+	Escribir "Ingrese la base"
+	Leer Base
+	Escribir "Ingrese la altura"
+	Leer Altura
+	//Proceso
+	Escribir "Area=" Base*Altura
+	Escribir "La altura del rectangulo es" Altura
+	Escribir "La base del rectangulo es" Base
+FinAlgoritmo
