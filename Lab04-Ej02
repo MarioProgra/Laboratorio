@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main () {
+double monto,des;
+string nombre;
+cout<<"Ingrese su nombre: ";
+cin>> nombre;
+cout<< "Ingrese el monto gastado: ";
+cin>> monto;
+//Condicion y proceso
+cout<<"Tu nombre es:" << nombre <<endl;
+if (monto<=100){
+    cout<<"Sin descuento" <<monto<<endl;
+}
+else {
+    if (100 > monto && monto<=500){
+        des=(monto*0.95);
+        cout<<"Categoria:Descuento Bronce (5%) Total a pagar="<<des<<endl;
+    }
+}
+    if (500 >monto && monto<=1000){
+        des=(monto*0.90);
+        cout<<"Categoria:Descuento Plata (10%) Total a pagar="<<des<<endl;
+    }
+    else{
+         if (monto>1000){
+         des=(monto*0.85);
+        cout<<"Categoria:Descuento Plata (15%) Total a pagar="<<des<<endl;
+         }
+
+    }
+
+}
+
+
