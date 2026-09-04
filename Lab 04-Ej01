@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main () {
+double m3,montop;
+string nombre,categoria;
+cout<<"Ingrese su nombre: ";
+cin>> nombre;
+cout<<"Ingrese su consumo en m3: ";
+cin>> m3;
+//Condicion
+ if(0< m3 && m3 <= 15){
+ montop= (m3*1.20)+10;
+cout<< "Tu consumo es minimo=" << montop<<endl;
+ }
+ else{
+    if(15<m3 && m3<=35){
+            montop= (m3*2.50)+10;
+    cout << "Tu consumo es domestico="<<montop<<endl;
+
+    }
+ }
+if(35< m3 && m3 <= 70){
+  montop= (m3*4.00)+10;
+ cout<< "Tu consumo es comercial=" << montop<<endl;
+ }
+ else{
+    if(m3>70){
+            montop= (m3*6.50)+10;
+    cout << "Tu consumo es industrial="<<montop<<endl;
+    }
+ }
+}
