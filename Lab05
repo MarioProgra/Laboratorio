@@ -1,0 +1,121 @@
+#include <iostream>
+using namespace std;
+int main () {
+char opcion;
+int kg;
+double tarifabase;
+double preciokgextra;
+int kgextras;
+double montototal;
+do{
+    //Menu
+    cout<<"===================================="<<endl;
+    cout <<"Control De Tarifa transporte"<<endl;
+    cout<<"============================"<<endl;
+    cout<<"[L] La paz/El alto"<<endl;
+    cout<<"[C] Cochabamba"<<endl;
+    cout<<"[S] Santa cruz"<<endl;
+     cout<<"[B] Beni"<<endl;
+    cout<<"[X] Salir"<<endl;
+    cout<< "Seleccione una opcion"<<endl;
+    cin >>opcion;
+    //2,Control
+    switch (opcion) {
+    case 'L':
+    case 'l':
+        tarifabase=7.00;
+        preciokgextra=3.00;
+        cout<<"Destino La Paz"<<endl;
+        cout<<"Ingrese los kg: ";
+        cin>>kg;
+        if(kg<=0) {
+            cout<< "Error: El peso debe ser mayor a 0"<<endl;
+        } else if (kg==1) {
+        montototal= tarifabase;
+        cout<< "Tarifa base aplicada 1kg"<<endl;
+        cout<< "Monto Total a pagar: Bs" <<montototal<<endl;
+        } else {
+        kgextras=kg -2;
+        montototal=tarifabase+(kgextras*preciokgextra);
+        cout<<"Tarifa Base + " <<kgextras<<"Kg(s) extra(s). "<<endl;
+        cout <<"Monto Total a pagar: "<<montototal<<endl;
+    }
+    break;
+
+     case 'C':
+    case 'c':
+        tarifabase=5.00;
+        preciokgextra=3.00;
+        cout<<"Destino Cochabamba"<<endl;
+        cout<<"Ingrese los kg: ";
+        cin>>kg;
+        if(kg<=0) {
+            cout<< "Error: El peso debe ser mayor a 0"<<endl;
+        } else if (kg==1) {
+        montototal= tarifabase;
+        cout<< "Tarifa base aplicada 1kg"<<endl;
+        cout<< "Monto Total a pagar: Bs" <<montototal<<endl;
+        } else {
+        kgextras=kg -2;
+        montototal=tarifabase+(kgextras*preciokgextra);
+        cout<<"Tarifa Base + " <<kgextras<<"Kg(s) extra(s). "<<endl;
+        cout <<"Monto Total a pagar: "<<montototal<<endl;
+    }
+    break;
+
+
+ case 'S':
+    case 's':
+        tarifabase=8.00;
+        preciokgextra=3.00;
+        cout<<"Destino Santa cruz"<<endl;
+        cout<<"Ingrese los kg: ";
+        cin>>kg;
+        if(kg<=0) {
+            cout<< "Error: El peso debe ser mayor a 0"<<endl;
+        } else if (kg==1) {
+        montototal= tarifabase;
+        cout<< "Tarifa base aplicada 1kg"<<endl;
+        cout<< "Monto Total a pagar: Bs" <<montototal<<endl;
+        } else {
+        kgextras=kg -2;
+        montototal=tarifabase+(kgextras*preciokgextra);
+        cout<<"Tarifa Base + " <<kgextras<<"Kg(s) extra(s). "<<endl;
+        cout <<"Monto Total a pagar: "<<montototal<<endl;
+    }
+    break;
+
+    case 'B':
+    case 'b':
+        tarifabase=8.00;
+        preciokgextra=3.00;
+        cout<<"Destino Beni"<<endl;
+        cout<<"Ingrese los kg: ";
+        cin>>kg;
+        if(kg<=0) {
+            cout<< "Error: El peso debe ser mayor a 0"<<endl;
+        } else if (kg==1) {
+        montototal= tarifabase;
+        cout<< "Tarifa base aplicada 1kg"<<endl;
+        cout<< "Monto Total a pagar: Bs" <<montototal<<endl;
+        } else {
+        kgextras=kg -2;
+        montototal=tarifabase+(kgextras*preciokgextra);
+        cout<<"Tarifa Base + " <<kgextras<<"Kg(s) extra(s). "<<endl;
+        cout <<"Monto Total a pagar: "<<montototal<<endl;
+    }
+    break;
+
+    case 'X':
+    case 'x':
+        cout<<"Saliendo del programa"<<endl;
+        break;
+    default:
+        cout<<"Opcion invalida"<<endl;
+        break;
+    }
+} while (opcion != 'X' && opcion !=   'x');
+return 0;
+
+
+}
