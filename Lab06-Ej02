@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double combustible = 50;
+    double consumido;
+    double totalConsumido = 0;
+    int entregas = 0;
+
+    for (; combustible > 10; ) {
+        cout << "Ingrese los litros de combustible consumidos: ";
+        cin >> consumido;
+
+        combustible = combustible - consumido;
+        totalConsumido = totalConsumido + consumido;
+        entregas++;
+    }
+
+    cout << "\n--- Control de combustible ---" << endl;
+    cout << "Cantidad de entregas realizadas: " << entregas << endl;
+    cout << "Total de combustible consumido: " << totalConsumido << " litros" << endl;
+    cout << "Combustible restante: " << combustible << " litros" << endl;
+    cout << "Debe cargar combustible" << endl;
+
+    return 0;
+}
