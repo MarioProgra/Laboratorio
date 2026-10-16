@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+void leerdatos(int &ev,double &nota);
+double procesar(int ev, double nota);
+void mostrar(double promedio);
+int main () {
+double nota,promedio;
+int ev;
+leerdatos(ev,nota);
+promedio =procesar(ev, nota);
+mostrar(promedio);
+return 0;
+}
+void leerdatos(int &ev,double &nota){
+cout <<"Ingrese las Evaluaciones: ";
+cin >> ev;
+}
+double procesar(int ev, double nota){
+   double suma=0;
+  double promedio;
+  for(int i=1;i <= ev; i++){
+  cout <<"Ingrese la Nota correspondiente de la evaluacion===> "<<i<<  endl;
+  cin >> nota;
+  suma= suma + nota;
+  }
+     promedio= suma/ev;
+  return promedio;
+}
+void mostrar(double promedio){
+if(promedio<51){
+cout <<"Estudiante REPROBADO: "<<endl;
+cout <<"Promedio: "<<promedio<<endl;
+}else {
+cout<< "Estudiante APROBADO: "<<endl;
+cout <<"Promedio: "<<promedio<<endl;
+}
+}
