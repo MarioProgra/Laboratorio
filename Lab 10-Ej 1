@@ -1,0 +1,130 @@
+
+#include <iostream>
+using namespace std;
+
+// Prototipos de funciones
+int ingresarCantidad();
+void ingresarNotas(float notas[], int n);
+float calcularPromedio(float notas[], int n);
+float encontrarMayor(float notas[], int n);
+float encontrarMenor(float notas[], int n);
+void mostrarNotas(float notas[], int n);
+void mostrarResultados(float promedio, float mayor, float menor);
+
+// Funcion principal
+int main() {
+    int n;
+    float notas[100];
+    float promedio, mayor, menor;
+
+    // Ingresar cantidad de estudiantes
+    n = ingresarCantidad();
+
+    // Ingresar las notas
+    ingresarNotas(notas, n);
+
+    // Calcular resultados
+    promedio = calcularPromedio(notas, n);
+    mayor = encontrarMayor(notas, n);
+    menor = encontrarMenor(notas, n);
+
+    // Mostrar resultados
+    mostrarNotas(notas, n);
+    mostrarResultados(promedio, mayor, menor);
+
+    return 0;
+}
+
+// Funcion para ingresar la cantidad de estudiantes
+int ingresarCantidad() {
+    int n;
+
+    do {
+        cout << "Ingrese la cantidad de estudiantes (1-100): ";
+        cin >> n;
+
+        if (n < 1 || n > 100) {
+            cout << "Cantidad invalida. Intente nuevamente." << endl;
+        }
+
+    } while (n < 1 || n > 100);
+
+    return n;
+}
+
+// Funcion para ingresar y validar las notas
+void ingresarNotas(float notas[], int n) {
+
+    for (int i = 0; i < n; i++) {
+
+        do {
+            cout << "Ingrese la nota del estudiante "
+                 << i + 1 << " (0-100): ";
+            cin >> notas[i];
+
+            if (notas[i] < 0 || notas[i] > 100) {
+                cout << "Nota invalida. Ingrese nuevamente." << endl;
+            }
+
+        } while (notas[i] < 0 || notas[i] > 100);
+    }
+}
+
+// Funcion para calcular el promedio
+float calcularPromedio(float notas[], int n) {
+    float suma = 0;
+
+    for (int i = 0; i < n; i++) {
+        suma += notas[i];
+    }
+
+    return suma / n;
+}
+
+// Funcion para encontrar la nota mayor
+float encontrarMayor(float notas[], int n) {
+    float mayor = notas[0];
+
+    for (int i = 1; i < n; i++) {
+        if (notas[i] > mayor) {
+            mayor = notas[i];
+        }
+    }
+
+    return mayor;
+}
+
+// Funcion para encontrar la nota menor
+float encontrarMenor(float notas[], int n) {
+    float menor = notas[0];
+
+    for (int i = 1; i < n; i++) {
+        if (notas[i] < menor) {
+            menor = notas[i];
+        }
+    }
+
+    return menor;
+}
+
+// Funcion para mostrar todas las notas
+void mostrarNotas(float notas[], int n) {
+    cout << "\n========== NOTAS REGISTRADAS ==========" << endl;
+
+    for (int i = 0; i < n; i++) {
+        cout << "Estudiante " << i + 1 << ": "
+             << notas[i] << endl;
+    }
+}
+
+// Funcion para mostrar los resultados finales
+void mostrarResultados(float promedio, float mayor, float menor) {
+    cout << "\n========== RESUMEN GENERAL ==========" << endl;
+
+    cout << "Promedio general: " << promedio << endl;
+    cout << "Nota mayor: " << mayor << endl;
+    cout << "Nota menor: " << menor << endl;
+
+    cout << "=====================================" << endl;
+}
+
