@@ -1,0 +1,88 @@
+
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+// PROTOTIPOS DE LAS FUNCIONES
+void ingresarCantidad(int &n);
+void registrarPreguntas(vector<string> &preguntas, int n);
+string validarPregunta(string pregunta);
+void mostrarPreguntas(vector<string> preguntas);
+
+// FUNCION PRINCIPAL
+int main() {
+    int n;
+    vector<string> preguntas;
+
+    ingresarCantidad(n);
+
+    registrarPreguntas(preguntas, n);
+
+    mostrarPreguntas(preguntas);
+
+    return 0;
+}
+
+// FUNCION PARA INGRESAR LA CANTIDAD DE PREGUNTAS
+void ingresarCantidad(int &n) {
+    do {
+        cout << "Ingrese la cantidad de preguntas: ";
+        cin >> n;
+
+        if (n <= 0) {
+            cout << "Error: ingrese una cantidad mayor a cero." << endl;
+        }
+
+    } while (n <= 0);
+}
+
+// FUNCION PARA VALIDAR Y LIMPIAR UNA PREGUNTA
+string validarPregunta(string pregunta) {
+
+    // Eliminar espacios al inicio
+    while (pregunta.length() > 0 && pregunta[0] == ' ') {
+        pregunta = pregunta.substr(1);
+    }
+
+    // Eliminar espacios al final
+    while (pregunta.length() > 0 &&
+           pregunta[pregunta.length() - 1] == ' ') {
+        pregunta = pregunta.substr(0, pregunta.length() - 1);
+    }
+
+    return pregunta;
+}
+
+// FUNCION PARA REGISTRAR LAS PREGUNTAS
+void registrarPreguntas(vector<string> &preguntas, int n) {
+    string pregunta;
+
+    cin.ignore();
+
+    for (int i = 0; i < n; i++) {
+
+        do {
+            cout << "\nPregunta " << i + 1 << ":" << endl;
+            getline(cin, pregunta);
+
+            pregunta = validarPregunta(pregunta);
+
+            if (pregunta.length() == 0) {
+                cout << "Error: la pregunta no puede estar vacia." << endl;
+            }
+
+        } while (pregunta.length() == 0);
+
+        preguntas.push_back(pregunta);
+    }
+}
+
+// FUNCION PARA MOSTRAR LAS PREGUNTAS
+void mostrarPreguntas(vector<string> preguntas) {
+    cout << "\n===== PREGUNTAS REGISTRADAS =====" << endl;
+
+    for (int i = 0; i < preguntas.size(); i++) {
+        cout << i + 1 << ". " << preguntas[i] << endl;
+    }
+}
